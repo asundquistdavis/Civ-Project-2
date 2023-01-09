@@ -5,8 +5,6 @@ from game.models import Game
 urlpatterns = [
     path('', views.index, name='index'),
     path('profile/', views.profile, name='profile page'),
-    path('users/', views.users, name='users'),
-    path('user/<str:username>/', views.show_user, name='show user'),
     path('newgame/', views.newgame, name='start new game'),
     path('playgame/<int:id>/', views.playgame, name='play game'),
 ]

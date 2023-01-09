@@ -29,9 +29,12 @@ if 'SECRET_KEY' in os.environ:
 
 IS_HEROKU = "DYNO" in os.environ
 
+DEBUG = True
+
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
+    # DEBUG = False
 else:
     ALLOWED_HOSTS = []
 
@@ -146,7 +149,7 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '../loggedout/'
 
-CSRF_COOKIE_SECURE =True
+# CSRF_COOKIE_SECURE =True
 
 # Test Runner Config
 class HerokuDiscoverRunner(DiscoverRunner):
@@ -160,14 +163,14 @@ class HerokuDiscoverRunner(DiscoverRunner):
 
 # Use HerokuDiscoverRunner on Heroku CI
 if "CI" in os.environ:
-    TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
+    TEST_RUNNER = "CivProject.settings.HerokuDiscoverRunner"
 
-SECURE_HSTS_SECONDS = 1
+# SECURE_HSTS_SECONDS = 1
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_PRELOAD = True

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.http import HttpResponseRedirect
 from .forms import NewUserForm
 
 def newuser(response):
@@ -7,7 +7,7 @@ def newuser(response):
         form = NewUserForm(response.POST)
         if form.is_valid():
             form.save()
-        return redirect('users/')
+        return HttpResponseRedirect('/profile/')
             
     else:
         form = NewUserForm()

@@ -1,1 +1,1 @@
-web:gunicorn CivProject.asgi
+web: gunicorn CivProject.asgi

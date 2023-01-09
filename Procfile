@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn CivProject.asgi
+web: gunicorn CivProject.wsgi

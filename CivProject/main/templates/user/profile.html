@@ -1,0 +1,10 @@
+{% extends 'user/base.html' %}
+
+{% block title %}Profile - {{user}}{% endblock %}
+
+{% block usercontent %}
+    <button onclick="window.location.href='/newgame';">New Game</button>
+    <button onclick="pollButton()">Poll!</button>
+    {% load static %}
+    <script src="{% static 'js/test.js'%}"></script>
+{% endblock%}

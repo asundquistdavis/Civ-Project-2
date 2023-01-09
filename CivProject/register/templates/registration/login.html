@@ -1,0 +1,16 @@
+{% extends 'register/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block form %}
+{% load crispy_forms_tags %}
+<h3>Login</h3>
+<hr/>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br/>
+    <button type="submit" class="btn btn-success">Login</button>
+    <a class="float-end" href="/newuser">Create New User</a>
+</form>
+{% endblock %}

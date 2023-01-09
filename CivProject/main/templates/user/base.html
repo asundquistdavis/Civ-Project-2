@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% block usercontent %}{% endblock %}
+    {% else %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 bg-light border rounded p-2">
+                <p class="m-auto">Please <a href="/login">login.</a></p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

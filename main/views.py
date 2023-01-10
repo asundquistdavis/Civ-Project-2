@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from game.models import Game
-from .models import User
-from .forms import NewUser
 from _thread import start_new_thread
 
 def index(response):

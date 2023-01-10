@@ -34,7 +34,7 @@ DEBUG = True
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
-    DEBUG = False
+    # DEBUG = False
 else:
     ALLOWED_HOSTS = []
 

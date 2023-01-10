@@ -8,7 +8,7 @@ def newuser(response):
         if form.is_valid():
             form.save()
         return HttpResponseRedirect('/profile/')
-            
+
     else:
         form = NewUserForm()
     return render(response, 'register/newuser.html', {'form': form})

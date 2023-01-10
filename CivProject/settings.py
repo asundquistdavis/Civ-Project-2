@@ -34,7 +34,7 @@ DEBUG = True
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
-    # DEBUG = False
+    DEBUG = False
 else:
     ALLOWED_HOSTS = []
 
@@ -86,7 +86,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "CivProject.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -149,21 +148,21 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '../loggedout/'
 
-# CSRF_COOKIE_SECURE =True
+CSRF_COOKIE_SECURE = True
 
 # Test Runner Config
-class HerokuDiscoverRunner(DiscoverRunner):
-    """Test Runner for Heroku CI, which provides a database for you.
-    This requires you to set the TEST database (done for you by settings().)"""
+# class HerokuDiscoverRunner(DiscoverRunner):
+#     """Test Runner for Heroku CI, which provides a database for you.
+#     This requires you to set the TEST database (done for you by settings().)"""
 
-    def setup_databases(self, **kwargs):
-        self.keepdb = True
-        return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
+#     def setup_databases(self, **kwargs):
+#         self.keepdb = True
+#         return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
 
 
-# Use HerokuDiscoverRunner on Heroku CI
-if "CI" in os.environ:
-    TEST_RUNNER = "CivProject.settings.HerokuDiscoverRunner"
+# # Use HerokuDiscoverRunner on Heroku CI
+# if "CI" in os.environ:
+#     TEST_RUNNER = "CivProject.settings.HerokuDiscoverRunner"
 
 # SECURE_HSTS_SECONDS = 1
 
